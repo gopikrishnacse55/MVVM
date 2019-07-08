@@ -152,13 +152,32 @@
                     <view key="view" contentMode="scaleToFill" id="SUQ-UN-0kT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wc-Z8-YKl">
+                                <rect key="frame" x="16" y="51" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="L9x-YR-xf8"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2wc-Z8-YKl" firstAttribute="top" secondItem="AaY-fB-mcu" secondAttribute="top" constant="31" id="fSE-3M-mcL"/>
+                            <constraint firstItem="AaY-fB-mcu" firstAttribute="trailing" secondItem="2wc-Z8-YKl" secondAttribute="trailing" constant="16" id="upu-A5-lQG"/>
+                            <constraint firstItem="2wc-Z8-YKl" firstAttribute="leading" secondItem="AaY-fB-mcu" secondAttribute="leading" constant="16" id="ze9-vR-437"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AaY-fB-mcu"/>
                     </view>
+                    <connections>
+                        <outlet property="titleField" destination="2wc-Z8-YKl" id="nEs-wW-eXa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qse-XH-rao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3535" y="157"/>
+            <point key="canvasLocation" x="3533.5999999999999" y="156.97151424287858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="suc-wN-HmS">

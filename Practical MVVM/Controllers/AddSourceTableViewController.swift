@@ -10,6 +10,7 @@ import UIKit
 
 class AddSourceTableViewController: UIViewController {
 
+    @IBOutlet weak var titleField: UITextField!
     var addSourceClosure :(SourceViewModel,UIViewController) -> () = { _,_ in }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class AddSourceTableViewController: UIViewController {
 
     @objc func handleSave(sender : UIBarButtonItem)
     {
-        let sourceViewModel = SourceViewModel(name:"Indian news for sports", description: "Cricket news")
+        let sourceViewModel = SourceViewModel(name:self.titleField.text!, description: "Cricket news")
         self.addSourceClosure(sourceViewModel,self)
     }
     /*
