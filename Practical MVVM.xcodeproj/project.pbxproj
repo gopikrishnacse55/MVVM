@@ -10,6 +10,7 @@
 		861BDAF822D34A6700CC890B /* HeadlineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAF722D34A6700CC890B /* HeadlineListViewModel.swift */; };
 		861BDAFA22D34A8500CC890B /* Headline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAF922D34A8500CC890B /* Headline.swift */; };
 		861BDAFC22D34AEC00CC890B /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAFB22D34AEC00CC890B /* HeadlineTableViewCell.swift */; };
+		861BDAFE22D355FB00CC890B /* AddSourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAFD22D355FB00CC890B /* AddSourceTableViewController.swift */; };
 		86EE928D22CDC8260088F5DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EE928C22CDC8260088F5DF /* AppDelegate.swift */; };
 		86EE929222CDC8260088F5DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86EE929022CDC8260088F5DF /* Main.storyboard */; };
 		86EE929422CDC8390088F5DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86EE929322CDC8390088F5DF /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		861BDAF722D34A6700CC890B /* HeadlineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListViewModel.swift; sourceTree = "<group>"; };
 		861BDAF922D34A8500CC890B /* Headline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headline.swift; sourceTree = "<group>"; };
 		861BDAFB22D34AEC00CC890B /* HeadlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewCell.swift; sourceTree = "<group>"; };
+		861BDAFD22D355FB00CC890B /* AddSourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceTableViewController.swift; sourceTree = "<group>"; };
 		86EE928922CDC8260088F5DF /* Practical MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practical MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EE928C22CDC8260088F5DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86EE929122CDC8260088F5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				86EE92CF22CDD1D50088F5DF /* SourcesTableViewController.swift */,
 				86EE92D722CE0CE70088F5DF /* SourceDetailsTableViewController.swift */,
+				861BDAFD22D355FB00CC890B /* AddSourceTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				86EE92C122CDC93A0088F5DF /* Source.swift in Sources */,
 				86EE928D22CDC8260088F5DF /* AppDelegate.swift in Sources */,
 				861BDAFC22D34AEC00CC890B /* HeadlineTableViewCell.swift in Sources */,
+				861BDAFE22D355FB00CC890B /* AddSourceTableViewController.swift in Sources */,
 				86EE92D222CDF89A0088F5DF /* TableViewDataSource.swift in Sources */,
 				86EE92C322CDC9A20088F5DF /* Webservice.swift in Sources */,
 				86EE92D022CDD1D50088F5DF /* SourcesTableViewController.swift in Sources */,

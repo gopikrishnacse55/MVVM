@@ -26,6 +26,7 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
     private func updateUI() {
         
         self.title = "News"
+        addPlusNavigationButton()
         self.webservice = Webservice()
         self.sourceListViewModel = SourceListViewModel(webservice: self.webservice)
         
@@ -71,4 +72,26 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
     
     }
   
+    // add plus navigation button
+    
+    func addPlusNavigationButton()
+    {
+        let plus = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handlePlus(sender :)))
+        self.navigationItem.rightBarButtonItem = plus
+    }
+    
+    @objc func handlePlus(sender : UIBarButtonItem)
+    {
+        let storyboard : UIStoryboard  = UIStoryboard(name: "Main", bundle: nil);
+        let vc : AddSourceTableViewController = storyboard.instantiateViewController(withIdentifier: SegueIdentifier.addSource) as! AddSourceTableViewController
+        let navi = UINavigationController(rootViewController: vc);
+        vc.addSourceClosure = { [unowned self] sourceVM, controller in
+            
+            controller.dismiss(animated: true, completion: nil)
+            self.sourceListViewModel.addSource(source: sourceVM)
+            print("Updated to \(self.sourceListViewModel.sourceViewModels.count)")
+        }
+         self.present(navi, animated: true, completion: nil)
+    }
+    
 }
