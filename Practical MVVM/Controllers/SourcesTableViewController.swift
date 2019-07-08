@@ -59,7 +59,7 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc : SourceDetailsTableViewController = storyboard.instantiateViewController(withIdentifier:"SourceDetailsTableViewController") as! SourceDetailsTableViewController
-        vc.newsSourceModel = data
+        vc.sourceViewModel = data
         self.navigationController?.pushViewController(vc, animated: true)
     
         // present the view controller

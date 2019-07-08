@@ -40,11 +40,21 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableVi
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 50
+        if(cellIdentifier == Cells.source)
+        {
+            return 50
+        }
+        else
+        {
+            return 80
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let model = self.items[indexPath.row] as! SourceViewModel
-        delegate?.moveToSourceDetails(data: model)
+        if(cellIdentifier == Cells.source)
+        {
+            let model = self.items[indexPath.row] as! SourceViewModel
+            delegate?.moveToSourceDetails(data: model)
+        }
     }
 }

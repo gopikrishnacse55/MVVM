@@ -10,18 +10,37 @@ import UIKit
 
 class SourceDetailsTableViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    var newsSourceModel : SourceViewModel!
+    @IBOutlet weak var table_View: UITableView!
+    var sourceViewModel :SourceViewModel!
+    private var headlineListViewModel :HeadlineListViewModel!
+    private var dataSource :TableViewDataSource<HeadlineTableViewCell,HeadlineViewModel>!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        self.title = "Source Details View"
+       updateUI()
         
-        self.nameLabel.text = String("Name is \(self.newsSourceModel.name)")
     }
-    
+    private func updateUI() {
+        
+        self.title = self.sourceViewModel.name
+        self.headlineListViewModel = HeadlineListViewModel(source :sourceViewModel)
+        
+        self.headlineListViewModel.populateHeadlines {
+            
+            // setup the data source here
+            self.dataSource = TableViewDataSource(cellIdentifier: Cells.headline, items: self.headlineListViewModel.headlines) { cell, vm in
+                
+                cell.titleLabel.text = vm.title
+                cell.descriptionLabel.text = vm.description
+            }
+            
+            self.table_View.dataSource = self.dataSource
+            self.table_View.delegate = self.dataSource
+            self.table_View.reloadData()
+        }
+    }
 
     /*
     // MARK: - Navigation
