@@ -17,7 +17,7 @@ class SourceDetailsTableViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.title = "Source Details"
+        self.title = "Source Details View"
         
         self.nameLabel.text = String("Name is \(self.newsSourceModel.name)")
     }
