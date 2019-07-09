@@ -82,11 +82,12 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
     
     @objc func handlePlus(sender : UIBarButtonItem)
     {
+        
         let storyboard : UIStoryboard  = UIStoryboard(name: "Main", bundle: nil);
         let vc : AddSourceTableViewController = storyboard.instantiateViewController(withIdentifier: SegueIdentifier.addSource) as! AddSourceTableViewController
         let navi = UINavigationController(rootViewController: vc);
         vc.addSourceClosure = { [unowned self] sourceVM, controller in
-            
+
             controller.dismiss(animated: true, completion: nil)
             self.sourceListViewModel.addSource(source: sourceVM)
             print("Updated to \(self.sourceListViewModel.sourceViewModels.count)")
