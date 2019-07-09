@@ -17,7 +17,11 @@ class Webservice {
     
     func loadSources(completion :@escaping ([Source]) -> ()) {
         
+     Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
+        
         URLSession.shared.dataTask(with: sourcesURL) { data, _, _ in
+            
+            Utilities.sharedInstance.hideLoadingIndicator()
             
             if let data = data {
                 
@@ -38,13 +42,17 @@ class Webservice {
     
     func loadHeadlinesByCourse(source :Source, completion :@escaping ([Headline]) -> ()) {
         
-        print(source.id)
+//        print(source.id)
         
         let urlString = "https://newsapi.org/v2/top-headlines?sources=\((source.id)!)&apiKey=0cf790498275413a9247f8b94b3843fd"
         
         let articlesBySourceURL = URL(string: urlString)!
         
+        Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
+        
         URLSession.shared.dataTask(with: articlesBySourceURL) { data, _, _ in
+            
+            Utilities.sharedInstance.hideLoadingIndicator()
             
             if let data = data {
                 
