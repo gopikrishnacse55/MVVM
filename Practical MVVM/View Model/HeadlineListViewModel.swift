@@ -21,7 +21,11 @@ class HeadlineListViewModel {
         
         let source = Source(viewModel :self.selectedSource)
         
+        Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
+        
         Webservice().loadHeadlinesByCourse(source: source) { headlines in
+            
+            Utilities.sharedInstance.hideLoadingIndicator()
             
             self.headlines = headlines.compactMap(HeadlineViewModel.init)
             DispatchQueue.main.async {

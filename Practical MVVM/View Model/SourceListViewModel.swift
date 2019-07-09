@@ -26,7 +26,9 @@ class SourceListViewModel : NSObject {
     
     func populateSources() {
         
+        Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
         self.webservice.loadSources { [unowned self] sources in
+            Utilities.sharedInstance.hideLoadingIndicator()
             self.sourceViewModels = sources.compactMap(SourceViewModel.init)
         }
     }

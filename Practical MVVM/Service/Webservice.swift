@@ -17,11 +17,11 @@ class Webservice {
     
     func loadSources(completion :@escaping ([Source]) -> ()) {
         
-     Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
+//     Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
         
         URLSession.shared.dataTask(with: sourcesURL) { data, _, _ in
             
-            Utilities.sharedInstance.hideLoadingIndicator()
+//            Utilities.sharedInstance.hideLoadingIndicator()
             
             if let data = data {
                 
@@ -48,11 +48,11 @@ class Webservice {
         
         let articlesBySourceURL = URL(string: urlString)!
         
-        Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
+//        Utilities.sharedInstance.showLoadingIndicator(title: "Loading...")
         
         URLSession.shared.dataTask(with: articlesBySourceURL) { data, _, _ in
             
-            Utilities.sharedInstance.hideLoadingIndicator()
+//            Utilities.sharedInstance.hideLoadingIndicator()
             
             if let data = data {
                 
@@ -71,6 +71,7 @@ class Webservice {
             }.resume()
         
     }
+    
     
 }
 

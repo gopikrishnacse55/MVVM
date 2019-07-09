@@ -18,11 +18,17 @@ class Utilities: NSObject {
     
     func showLoadingIndicator(title : String) -> Void
     {
-      ANLoader.showLoading("Loading", disableUI: true)
+        ANLoader.showLoading(title, disableUI: true)
     }
     
     func hideLoadingIndicator()
     {
         ANLoader.hide()
     }
+    
+    func showAlert()
+    {
+        
+    }
 }
+
