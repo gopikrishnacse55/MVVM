@@ -26,9 +26,13 @@ class AddSourceTableViewController: UIViewController {
     }
     @objc func handleClose(sender : UIBarButtonItem)
     {
-        self.showAlert(withTitle: "Alert", message: "Are you want to close") {
+//        self.showAlert(withTitle: "Alert", message: "Are you want to close") {
+//            self.dismiss(animated: true, completion: nil)
+//        }
+        self.showPopup(withTitle: "Alert!", message: "Are you want to exit") {
             self.dismiss(animated: true, completion: nil)
         }
+        
     }
 
     @objc func handleSave(sender : UIBarButtonItem)

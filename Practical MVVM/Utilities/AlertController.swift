@@ -27,7 +27,17 @@ extension UIViewController {
                                       handler: {(alert: UIAlertAction!) in completion!()}))
         self.present(alert, animated: true, completion:nil);
     }
-    
+    func  showPopup(withTitle:String ,message:String,completion: (() -> Swift.Void)? = nil) -> Void {
+        let alert = UIAlertController(title: withTitle, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(alert: UIAlertAction!) in completion!()}))
+        alert.addAction(UIAlertAction(title: "No",
+                                      style: UIAlertAction.Style.default,
+                                      handler: {(alert: UIAlertAction!) in print("Foo")}))
+        
+        self.present(alert, animated: true, completion:nil);
+    }
     
     
     
