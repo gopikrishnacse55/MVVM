@@ -1,5 +1,5 @@
 import Foundation
-
+import UIKit
 class SourceListViewModel : NSObject {
     
     @objc dynamic private(set) var sourceViewModels :[SourceViewModel] = [SourceViewModel]()
@@ -26,10 +26,17 @@ class SourceListViewModel : NSObject {
     
     func populateSources() {
         
-        Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
-        self.webservice.loadSources { [unowned self] sources in
-            Utilities.sharedInstance.hideLoadingIndicator()
-            self.sourceViewModels = sources.compactMap(SourceViewModel.init)
+        if(Utilities.sharedInstance.checkNetwork())
+        {
+            Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
+            self.webservice.loadSources { [unowned self] sources in
+                Utilities.sharedInstance.hideLoadingIndicator()
+                self.sourceViewModels = sources.compactMap(SourceViewModel.init)
+            }
+        }
+        else
+        {
+            print("Check your network connection")
         }
     }
     

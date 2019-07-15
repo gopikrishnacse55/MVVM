@@ -15,6 +15,8 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
         super.viewDidLoad()
         
         updateUI()
+        
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {

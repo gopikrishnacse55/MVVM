@@ -8,6 +8,7 @@
 
 import UIKit
 import ANLoader
+import Reachability
 class Utilities: NSObject {
 
     class var sharedInstance : Utilities
@@ -25,10 +26,23 @@ class Utilities: NSObject {
     {
         ANLoader.hide()
     }
-    
-    func showAlert()
+    func checkNetwork() -> Bool
     {
+        let reach = Reachability();
+        
+        let networkReachability = reach;
+        let remoteHostStatus = networkReachability!.connection
+        
+        if (remoteHostStatus == .none)
+        {
+            return false
+        }
+        else
+        {
+            return true
+        }
         
     }
+
 }
 
