@@ -42,7 +42,9 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
         }
         else
         {
-            self.showAlert(withTitle: "Alert!", message: "Check your network connection")
+//            self.showAlert(withTitle: "Alert!", message: "Check your network connection")
+            self.showDialog(title: "Alert!", message: "Check your network connection")
+            
         }
         
     }

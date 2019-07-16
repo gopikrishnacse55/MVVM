@@ -11,6 +11,7 @@
 		861BDAFA22D34A8500CC890B /* Headline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAF922D34A8500CC890B /* Headline.swift */; };
 		861BDAFC22D34AEC00CC890B /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAFB22D34AEC00CC890B /* HeadlineTableViewCell.swift */; };
 		861BDAFE22D355FB00CC890B /* AddSourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BDAFD22D355FB00CC890B /* AddSourceTableViewController.swift */; };
+		864C2B7622DDA356002923CA /* DialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C2B7522DDA356002923CA /* DialogController.swift */; };
 		86E383D922D45C140065F3DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E383D822D45C140065F3DA /* Utilities.swift */; };
 		86E3840322D4C7BA0065F3DA /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E3840222D4C7BA0065F3DA /* AlertController.swift */; };
 		86EE928D22CDC8260088F5DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EE928C22CDC8260088F5DF /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		861BDAF922D34A8500CC890B /* Headline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headline.swift; sourceTree = "<group>"; };
 		861BDAFB22D34AEC00CC890B /* HeadlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		861BDAFD22D355FB00CC890B /* AddSourceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceTableViewController.swift; sourceTree = "<group>"; };
+		864C2B7522DDA356002923CA /* DialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogController.swift; sourceTree = "<group>"; };
 		86E383D822D45C140065F3DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		86E3840222D4C7BA0065F3DA /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		86EE928922CDC8260088F5DF /* Practical MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practical MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +258,7 @@
 				86EE928C22CDC8260088F5DF /* AppDelegate.swift */,
 				86E383D822D45C140065F3DA /* Utilities.swift */,
 				86E3840222D4C7BA0065F3DA /* AlertController.swift */,
+				864C2B7522DDA356002923CA /* DialogController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				86EE92C122CDC93A0088F5DF /* Source.swift in Sources */,
 				86E383D922D45C140065F3DA /* Utilities.swift in Sources */,
 				86EE928D22CDC8260088F5DF /* AppDelegate.swift in Sources */,
+				864C2B7622DDA356002923CA /* DialogController.swift in Sources */,
 				861BDAFC22D34AEC00CC890B /* HeadlineTableViewCell.swift in Sources */,
 				861BDAFE22D355FB00CC890B /* AddSourceTableViewController.swift in Sources */,
 				86EE92D222CDF89A0088F5DF /* TableViewDataSource.swift in Sources */,

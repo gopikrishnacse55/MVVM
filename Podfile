@@ -7,6 +7,7 @@ target 'Practical MVVM' do
 
 pod 'ReachabilitySwift'
 pod 'SVProgressHUD'
+pod 'SCLAlertView'
 
   # Pods for Practical MVVM
 
