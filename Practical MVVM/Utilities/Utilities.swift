@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ANLoader
+//import ANLoader
 import Reachability
 class Utilities: NSObject {
 
@@ -17,15 +17,15 @@ class Utilities: NSObject {
         return _sharedInstance
     }
     
-    func showLoadingIndicator(title : String) -> Void
-    {
-        ANLoader.showLoading(title, disableUI: true)
-    }
+//    func showLoadingIndicator(title : String) -> Void
+//    {
+//        ANLoader.showLoading(title, disableUI: true)
+//    }
     
-    func hideLoadingIndicator()
-    {
-        ANLoader.hide()
-    }
+//    func hideLoadingIndicator()
+//    {
+//        ANLoader.hide()
+//    }
     func checkNetwork() -> Bool
     {
         let reach = Reachability();

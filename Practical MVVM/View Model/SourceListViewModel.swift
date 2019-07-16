@@ -28,9 +28,9 @@ class SourceListViewModel : NSObject {
         
         if(Utilities.sharedInstance.checkNetwork())
         {
-            Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
+//            Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
             self.webservice.loadSources { [unowned self] sources in
-                Utilities.sharedInstance.hideLoadingIndicator()
+//                Utilities.sharedInstance.hideLoadingIndicator()
                 self.sourceViewModels = sources.compactMap(SourceViewModel.init)
             }
         }
