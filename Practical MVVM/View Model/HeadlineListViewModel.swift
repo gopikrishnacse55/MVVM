@@ -23,9 +23,13 @@ class HeadlineListViewModel {
         
 //        Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
         
+         Utilities.sharedInstance.showGlobalProgressHUD(withTitle: "Loading..")
+        
         Webservice().loadHeadlinesByCourse(source: source) { headlines in
             
 //            Utilities.sharedInstance.hideLoadingIndicator()
+            
+             Utilities.sharedInstance.dismissGlobalHUD()
             
             self.headlines = headlines.compactMap(HeadlineViewModel.init)
             DispatchQueue.main.async {

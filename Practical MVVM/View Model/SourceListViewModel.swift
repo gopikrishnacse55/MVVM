@@ -26,18 +26,20 @@ class SourceListViewModel : NSObject {
     
     func populateSources() {
         
-        if(Utilities.sharedInstance.checkNetwork())
-        {
+//        if(Utilities.sharedInstance.checkNetwork())
+//        {
 //            Utilities.sharedInstance.showLoadingIndicator(title: "Loading..")
+            Utilities.sharedInstance.showGlobalProgressHUD(withTitle: "Loading..")
             self.webservice.loadSources { [unowned self] sources in
 //                Utilities.sharedInstance.hideLoadingIndicator()
+                Utilities.sharedInstance.dismissGlobalHUD()
                 self.sourceViewModels = sources.compactMap(SourceViewModel.init)
             }
-        }
-        else
-        {
-            print("Check your network connection")
-        }
+//        }
+//        else
+//        {
+//            print("Check your network connection")
+//        }
     }
     
     func addSource(source: SourceViewModel) {

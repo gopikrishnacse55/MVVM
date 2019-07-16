@@ -30,11 +30,19 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
         self.title = "News"
         addPlusNavigationButton()
         self.webservice = Webservice()
-        self.sourceListViewModel = SourceListViewModel(webservice: self.webservice)
         
-        // setting up the bindings
-        self.sourceListViewModel.bindToSourceViewModels = {
-            self.updateDataSource()
+        if(Utilities.sharedInstance.checkNetwork())
+        {
+            self.sourceListViewModel = SourceListViewModel(webservice: self.webservice)
+            
+            // setting up the bindings
+            self.sourceListViewModel.bindToSourceViewModels = {
+                self.updateDataSource()
+            }
+        }
+        else
+        {
+            self.showAlert(withTitle: "Alert!", message: "Check your network connection")
         }
         
     }

@@ -6,6 +6,8 @@ target 'Practical MVVM' do
   use_frameworks!
 
 pod 'ReachabilitySwift'
+pod 'SVProgressHUD'
+
   # Pods for Practical MVVM
 
   target 'Practical MVVMTests' do
