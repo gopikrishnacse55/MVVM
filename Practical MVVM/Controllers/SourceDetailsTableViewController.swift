@@ -13,7 +13,8 @@ class SourceDetailsTableViewController: UIViewController {
     @IBOutlet weak var table_View: UITableView!
     var sourceViewModel :SourceViewModel!
     private var headlineListViewModel :HeadlineListViewModel!
-    private var dataSource :TableViewDataSource<HeadlineTableViewCell,HeadlineViewModel>!
+    private var indexPaths : IndexPathClass!
+    private var dataSource :TableViewDataSource<HeadlineTableViewCell,HeadlineViewModel,IndexPathClass>!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,16 +31,28 @@ class SourceDetailsTableViewController: UIViewController {
         self.headlineListViewModel.populateHeadlines {
             
             // setup the data source here
-            self.dataSource = TableViewDataSource(cellIdentifier: Cells.headline, items: self.headlineListViewModel.headlines) { cell, vm in
+//            self.dataSource = TableViewDataSource(cellIdentifier: Cells.headline, items: self.headlineListViewModel.headlines) { cell, vm in
+//
+//                cell.titleLabel.text = vm.title
+//                cell.descriptionLabel.text = vm.description
+//            }
+            
+            self.dataSource = TableViewDataSource(cellIdentifier: Cells.headline, items: self.headlineListViewModel.headlines, configureCell: { (cell, vm, index) in
                 
                 cell.titleLabel.text = vm.title
                 cell.descriptionLabel.text = vm.description
-            }
+                cell.details_btn.addTarget(self, action: #selector(self.handleDetails(sender : )), for: .touchUpInside)
+                cell.details_btn.tag = index.row
+            })
             
             self.table_View.dataSource = self.dataSource
             self.table_View.delegate = self.dataSource
             self.table_View.reloadData()
         }
+    }
+    @objc func handleDetails(sender : UIButton)
+    {
+        print(sender.tag)
     }
 
     /*

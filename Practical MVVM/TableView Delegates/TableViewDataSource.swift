@@ -12,13 +12,14 @@ import UIKit
 protocol SourceDetailsDelegate{
     func moveToSourceDetails(data : SourceViewModel )
 }
-class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableViewDataSource,UITableViewDelegate {
+class TableViewDataSource<Cell :UITableViewCell,ViewModel,IndexPathClass> : NSObject, UITableViewDataSource,UITableViewDelegate {
     
     private var cellIdentifier :String!
+    private var indexpath : IndexPath!
     private var items :[ViewModel]!
     var delegate: SourceDetailsDelegate?
-    var configureCell :(Cell,ViewModel) -> ()
-    init(cellIdentifier :String, items :[ViewModel], configureCell: @escaping (Cell,ViewModel) -> ()) {
+    var configureCell :(Cell,ViewModel,IndexPath) -> ()
+    init(cellIdentifier :String, items :[ViewModel], configureCell: @escaping (Cell,ViewModel,IndexPath) -> ()) {
         
         self.cellIdentifier = cellIdentifier
         self.items = items
@@ -33,9 +34,9 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! Cell
-        let item = self.items[indexPath.row]
-        self.configureCell(cell,item)
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath ) as! Cell
+        let item = self.items![indexPath.row]
+        self.configureCell(cell,item,indexPath)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -46,7 +47,7 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel> : NSObject, UITableVi
         }
         else
         {
-            return 80
+            return 114
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)

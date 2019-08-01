@@ -10,7 +10,7 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
     @IBOutlet weak var table_View: UITableView!
     private var webservice :Webservice!
     private var sourceListViewModel :SourceListViewModel!
-    private var dataSource :TableViewDataSource<SourceTableViewCell,SourceViewModel>!
+    private var dataSource :TableViewDataSource<SourceTableViewCell,SourceViewModel,IndexPathClass>!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,11 +53,15 @@ class SourcesTableViewController : UIViewController,UITableViewDelegate,SourceDe
         
         
        
-        self.dataSource = TableViewDataSource(cellIdentifier: Cells.source, items: self.sourceListViewModel.sourceViewModels) { cell, vm in
+//        self.dataSource = TableViewDataSource(cellIdentifier: Cells.source, items: self.sourceListViewModel.sourceViewModels) { cell, vm in
+//
+//            cell.nameLabel.text = vm.name
+//        }
+        
+        self.dataSource = TableViewDataSource(cellIdentifier: Cells.source, items: self.sourceListViewModel.sourceViewModels, configureCell: { (cell, vm, index) in
             
             cell.nameLabel.text = vm.name
-        }
-        
+        })
         
         self.table_View.dataSource = self.dataSource
         self.dataSource.delegate = self

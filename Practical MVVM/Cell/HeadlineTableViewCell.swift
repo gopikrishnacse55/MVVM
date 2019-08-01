@@ -10,6 +10,7 @@ import UIKit
 
 class HeadlineTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var details_btn: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {

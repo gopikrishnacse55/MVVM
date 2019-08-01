@@ -54,3 +54,11 @@ class HeadlineViewModel {
         self.description = headline.description
     }
 }
+class IndexPathClass
+{
+    var indexpath : IndexPath!
+    init(indexpath : IndexPath)
+    {
+        self.indexpath = indexpath
+    }
+}
