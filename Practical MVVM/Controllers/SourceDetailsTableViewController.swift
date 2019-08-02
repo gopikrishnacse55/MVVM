@@ -47,6 +47,8 @@ class SourceDetailsTableViewController: UIViewController {
             
             self.table_View.dataSource = self.dataSource
             self.table_View.delegate = self.dataSource
+            self.table_View.estimatedRowHeight = 200;
+            self.table_View.rowHeight = UITableViewAutomaticDimension;
             self.table_View.reloadData()
         }
     }
@@ -64,5 +66,6 @@ class SourceDetailsTableViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

@@ -24,6 +24,7 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel,IndexPathClass> : NSOb
         self.cellIdentifier = cellIdentifier
         self.items = items
         self.configureCell = configureCell
+        
     
        
     }
@@ -47,7 +48,19 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel,IndexPathClass> : NSOb
         }
         else
         {
-            return 114
+//            return 114
+            return UITableViewAutomaticDimension
+        }
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(cellIdentifier == Cells.source)
+        {
+            return 50
+        }
+        else
+        {
+            //            return 114
+            return UITableViewAutomaticDimension
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -58,4 +71,5 @@ class TableViewDataSource<Cell :UITableViewCell,ViewModel,IndexPathClass> : NSOb
             delegate?.moveToSourceDetails(data: model)
         }
     }
+    
 }
